@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { DoubleSide } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 
@@ -32,18 +33,23 @@ const scene = new THREE.Scene()
 // const material = new THREE.MeshBasicMaterial()
 // material.map = doorColorTexture
 // // material.color = new THREE.Color('white')
-// // material.wireframe = true
 // // material.opacity = 0.5
+// material.wireframe = true
 // material.transparent = true
 // material.alphaMap = doorAlphaTexture
 // material.side = THREE.BackSide
 
 
+const material = new THREE.MeshNormalMaterial()
+material.flatShading = true
+material.side = THREE.DoubleSide
 
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
     material
 )
+
+
 sphere.position.x = -1.5
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(1, 1) , material
