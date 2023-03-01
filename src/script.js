@@ -6,13 +6,13 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const doorColorTexture = textureLoader.load('.textures/door/color.jpg')
+const doorColorTexture = textureLoader.load('/textures/door/color.jpg')
 const doorAlphaTexture = textureLoader.load('/textures/door/alpha.jpg')
 const doorAmbientOcclusionTexture = textureLoader.load('/textures/door/ambientOcclusion.jpg')
 const doorHeigthTexture = textureLoader.load('/textures/door/height.jpg')
 const doorMetalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
 const doorNormalTexture = textureLoader.load('/textures/door/normal.jpg')
-const doorRoughnessTexture = textureLoader.load('/textures/door/roughnes.jpg')
+const doorRoughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
 const matcapTexture = textureLoader.load('/textures/matcaps/1.png')
 const gradientTexture = textureLoader.load('/textures/gradients/3.jpg')
 
@@ -30,6 +30,15 @@ const scene = new THREE.Scene()
  * Objects
  */
 const material = new THREE.MeshBasicMaterial()
+material.map = doorColorTexture
+// material.color = new THREE.Color('white')
+// material.wireframe = true
+// material.opacity = 0.5
+material.transparent = true
+material.alphaMap = doorAlphaTexture
+material.side = THREE.BackSide
+
+
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
     material
