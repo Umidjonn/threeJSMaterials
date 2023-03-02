@@ -34,15 +34,19 @@ const scene = new THREE.Scene()
 // material.map = doorColorTexture
 // // material.color = new THREE.Color('white')
 // // material.opacity = 0.5
-// material.wireframe = true
 // material.transparent = true
+// material.wireframe = true
 // material.alphaMap = doorAlphaTexture
+// material.side = THREE.DoubleSide
 // material.side = THREE.BackSide
 
 
-const material = new THREE.MeshNormalMaterial()
-material.flatShading = true
-material.side = THREE.DoubleSide
+// const material = new THREE.MeshNormalMaterial()
+// material.flatShading = true
+
+const material = new THREE.MeshMatcapMaterial()
+
+
 
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
