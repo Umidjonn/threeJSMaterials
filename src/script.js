@@ -45,7 +45,10 @@ const scene = new THREE.Scene()
 // material.flatShading = true
 
 const material = new THREE.MeshMatcapMaterial()
-
+material.side  = THREE.DoubleSide
+material.flatShading = true
+material.wireframe = true
+material.color = new THREE.Color('blue')
 
 
 const sphere = new THREE.Mesh(
