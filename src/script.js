@@ -49,7 +49,9 @@ const scene = new THREE.Scene()
 
 // const material = new THREE.MeshDepthMaterial()
 
-const material = new THREE.MeshLambertMaterial()
+// const material = new THREE.MeshLambertMaterial()
+
+cons
 
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
@@ -77,6 +79,9 @@ pointLight.position.x = 2
 pointLight.position.y = 3
 pointLight.position.z = 4
 scene.add(pointLight)
+
+
+
 /**
  * Sizes
  */
