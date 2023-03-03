@@ -51,7 +51,9 @@ const scene = new THREE.Scene()
 
 // const material = new THREE.MeshLambertMaterial()
 
-cons
+const material = new THREE.MeshPhongMaterial()
+material.shininess = 100
+material.specular = new THREE.Color(0x1188ff)
 
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
