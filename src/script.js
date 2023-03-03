@@ -49,15 +49,12 @@ const scene = new THREE.Scene()
 
 // const material = new THREE.MeshDepthMaterial()
 
-
-
+const material = new THREE.MeshLambertMaterial()
 
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
     material
 )
-
-
 sphere.position.x = -1.5
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(1, 1) , material
@@ -66,11 +63,7 @@ const torus = new THREE.Mesh(
     new THREE.TorusGeometry(0.3, 0.2, 16, 32),
     material
 )
-
-
-
 torus.position.x = 1.5
-
 scene.add(sphere, plane, torus)
 
 /**
@@ -79,6 +72,11 @@ scene.add(sphere, plane, torus)
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
 
+const pointLight = new THREE.PointLight(0xffffff, 0.5)
+pointLight.position.x = 2
+pointLight.position.y = 3
+pointLight.position.z = 4
+scene.add(pointLight)
 /**
  * Sizes
  */
